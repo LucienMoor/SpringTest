@@ -128,7 +128,6 @@
 					<reuseForks>true</reuseForks>
 					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
 				</configuration>
-				<version>2.20.0</version>
 				<dependencies>
 					<dependency>
 						<groupId>org.junit.platform</groupId>
