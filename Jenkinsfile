@@ -9,7 +9,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'mvn -f ./SpringTestDemo -DskipTests clean install' 
-                sh 'mvn -f ./SpringTestDemo test'
+                sh 'mvn -f ./SpringTestDemo -Dtest=SpringTestDemoApplicationTests test'
             }
         }
     }
