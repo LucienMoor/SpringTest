@@ -1,24 +1,24 @@
 pipeline {
-        agent {
+    agent {
         docker {
             image 'maven:3-alpine' 
             args '-v /root/.m2:/root/.m2' 
         }
     }
     stages {
-        stage('Example Build') {
-            agent { docker 'maven:3-alpine' } 
+        stage('Build') { 
+            agent { docker 'mysql/mysql-server' }
             steps {
-                echo 'Hello, Maven'
-                sh 'mvn --version'
+                sh 'java -version' 
+                sh 'mvn -f ./SpringTestDemo/pom.xml -DskipTests clean package' 
             }
         }
-        stage('Example Test') {
-            agent { docker 'openjdk:8-jre' } 
-            steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
+        stage('test'){
+           steps {
+                sh 'java -version' 
+                sh 'mvn -f ./SpringTestDemo/pom.xml clean package' 
             }
+            
         }
     }
 }
