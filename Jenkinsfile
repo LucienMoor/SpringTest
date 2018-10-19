@@ -1,5 +1,5 @@
 pipeline {
-	{ dockerfile true }
+	agent{ dockerfile true }
     stages {
         stage('Build') { 
             steps {
@@ -9,8 +9,7 @@ pipeline {
         }
         stage('test'){
            steps {
-                sh 'java -version' 
-                sh 'mvn -f ./SpringTestDemo/pom.xml clean package' 
+                sh 'mvn -version' 
             }
             
         }
