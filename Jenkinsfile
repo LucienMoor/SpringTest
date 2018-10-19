@@ -7,6 +7,7 @@ pipeline {
     }
     stages {
         stage('Build') { 
+            agent { docker 'mysql/mysql-server' }
             steps {
                 sh 'java -version' 
                 sh 'mvn -f ./SpringTestDemo/pom.xml -DskipTests clean package' 
