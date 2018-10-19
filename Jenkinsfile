@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -f ./SpringTestDemo -DskipTests clean install' 
-                sh 'mvn -f ./SpringTestDemo -Dtest=SpringTestDemoApplicationTests test'
+                sh 'mvn -f ./SpringTestDemo/pom.xml -DskipTests clean install' 
+                sh 'mvn -f ./SpringTestDemo/pom.xml -Dtest=SpringTestDemoApplicationTests test'
             }
         }
     }
