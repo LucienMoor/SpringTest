@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                sh 'java -version' 
                 sh 'mvn -f ./SpringTestDemo/pom.xml clean package' 
             }
         }
