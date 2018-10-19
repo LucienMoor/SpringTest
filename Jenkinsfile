@@ -14,8 +14,14 @@ pipeline {
             }
         }
         stage('test'){
+               agent {
+                docker {
+                    image 'mysql/mysql-server' 
+                    args '-v /root/.m2:/root/.m2' 
+                    }
+            }
            steps {
-                sh 'java -version' 
+                sh 'mvn -version' 
             }
             
         }
