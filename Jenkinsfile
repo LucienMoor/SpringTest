@@ -13,7 +13,7 @@ pipeline {
         }
         stage('test'){
            steps {
-                sh 'ping 157.26.100.78' 
+                sh 'mvn -f ./SpringTestDemo/pom.xml clean test' 
             }
             
         }
