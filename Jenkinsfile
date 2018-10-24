@@ -9,7 +9,8 @@ pipeline {
             steps {
                 sh 'java -version' 
                 sh 'mvn -f ./SpringTestDemo/pom.xml -DskipTests clean package' 
-                sh 'ls ./SpringTestDemo/target'
+                sh 'java -jar ./SpringTestDemo/target/SpringTestDemo-0.0.1-SNAPSHOT.jar'
+'
             }
         }
         stage('test'){
