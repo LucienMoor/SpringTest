@@ -7,13 +7,13 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'java -version' 
-                sh 'mvn -f ./SpringTestDemo/pom.xml -DskipTests clean package' 
+                sh 'mv ./SpringTestDemo/* ./'
+                sh 'mvn -DskipTests clean package' 
             }
         }
         stage('test'){
            steps {
-                sh 'mvn -f ./SpringTestDemo/pom.xml clean package' 
+                sh 'mvn clean package' 
             }
             
         }
