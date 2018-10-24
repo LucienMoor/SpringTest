@@ -8,7 +8,6 @@ pipeline {
               }
             }
             steps {
-                cleanWs()
                 sh 'mv ./SpringTestDemo/* ./'
                 sh 'mvn -DskipTests clean package' 
                 sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar $'
@@ -22,6 +21,7 @@ pipeline {
             }
            steps {
                 sh 'ls' 
+                cleanWs()
             }
             
         }
