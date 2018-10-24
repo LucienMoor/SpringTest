@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'mv ./SpringTestDemo/* ./'
                 sh 'mvn -DskipTests clean package' 
-                sh 'java -jar ./SpringTestDemo/target/SpringTestDemo-0.0.1-SNAPSHOT.jar $'
+                sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar $'
             }
         }
         stage('test'){
