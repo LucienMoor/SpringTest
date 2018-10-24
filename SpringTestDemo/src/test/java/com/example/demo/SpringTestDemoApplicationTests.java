@@ -13,6 +13,8 @@ import org.junit.Test;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
@@ -29,6 +31,7 @@ import com.example.demo.models.User;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)//use random port to test
+@EnableAutoConfiguration(exclude=HibernateJpaAutoConfiguration.class)
 //@AutoConfigureWebTestClient
 //@AutoConfigureMockMvc
 public class SpringTestDemoApplicationTests {
