@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                cleanWs()
                 sh 'mv ./SpringTestDemo/* ./'
                 sh 'mvn -DskipTests clean package' 
             }
@@ -14,6 +15,7 @@ pipeline {
         stage('test'){
            steps {
                 sh 'mvn clean package' 
+                cleanWs()
             }
             
         }
