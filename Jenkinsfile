@@ -9,8 +9,6 @@ pipeline {
             steps {
                 sh 'java -version' 
                 sh 'mvn -f ./SpringTestDemo/pom.xml -DskipTests clean package' 
-                sh 'cd ./SpringTestDemo'
-                sh 'mvn spring-boot:run'
             }
         }
         stage('test'){
