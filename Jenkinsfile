@@ -16,11 +16,12 @@ pipeline {
         stage('test'){
             agent{
                 docker{
-                    image 'katalonstudio/katalon:latest'
+                    image 'docker'
+                    
                 }
             }
            steps {
-                sh 'ls' 
+                sh 'docker ps' 
                 cleanWs()
             }
             
