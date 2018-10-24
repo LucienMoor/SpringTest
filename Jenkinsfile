@@ -9,7 +9,7 @@ pipeline {
         }
         stage('test'){
            steps {
-                sh 'mvn -version' 
+                sh 'ping 157.26.100.78' 
             }
             
         }
