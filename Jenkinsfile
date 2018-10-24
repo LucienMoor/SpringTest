@@ -8,6 +8,7 @@ pipeline {
               }
             }
             steps {
+                sh 'rm -r ./SpringTestDemo'
                 sh 'mv ./SpringTestDemo/* ./'
                 sh 'mvn -DskipTests clean package' 
                 sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar $'
