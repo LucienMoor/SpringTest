@@ -10,4 +10,4 @@ RUN ./index.sh
 
 WORKDIR /
 
-ENTRYPOINT ["/bin/sh"]  
+ENTRYPOINT ["tail", "-f", "/dev/null"]
