@@ -1,7 +1,7 @@
 pipeline {
     agent none
 	    environment {
-        katalon_opts = '-browserType="Chrome" -retry=0 -statusDelay=15 -projectPath="/katalon/katalon/source/SpringTest/SpringTest.prj" -testSuitePath="Test Suites/SpringTest" --config -proxy.option=MANUAL_CONFIG -proxy.server.type=HTTP -proxy.server.address=192.168.1.221 -proxy.server.port=8888'
+        katalon_opts = 'test="test"'
     }
     stages {
         stage('Build') { 
