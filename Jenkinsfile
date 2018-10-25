@@ -21,11 +21,12 @@ pipeline {
                 }
             }
            steps {
+		   sh 'mv ./SpringTest/* ./'
 		  		sh 'apk update'
 		   		sh 'apk upgrade'
 		   		sh 'apk add bash'
-				sh 'chmod +x ./SpringTest/run_chrome.sh'
-				sh 'bash ./SpringTest/run_chrome.sh'
+				sh 'chmod +x ./run_chrome.sh'
+				sh 'bash ./run_chrome.sh'
 						cleanWs()
             }
             
