@@ -16,7 +16,7 @@ pipeline {
         stage('test'){
             agent{
                 docker{
-                    image 'docker'
+                    image 'katalonstudio/katalon'
                     
                 }
             }
