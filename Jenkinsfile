@@ -25,6 +25,7 @@ pipeline {
             }
            steps {
 		sh 'ls'
+		sh 'chmod +x ./SpringTest/run_chrome.sh'
 		sh './SpringTest/run_chrome.sh'
                 cleanWs()
             }
