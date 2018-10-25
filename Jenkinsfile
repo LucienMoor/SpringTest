@@ -22,6 +22,7 @@ pipeline {
             }
            steps {
 		   sh 'mv ./SpringTest/* ./'
+		   sh 'ls /var/jenkins_home/workspace/DemoPipeline'
 		  		sh 'apk update'
 		   		sh 'apk upgrade'
 		   		sh 'apk add bash'
