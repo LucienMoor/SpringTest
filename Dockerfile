@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM java:8
 
 ADD ./src ./
 
@@ -10,4 +10,4 @@ RUN ./index.sh
 
 WORKDIR /
 
-ENTRYPOINT ENTRYPOINT ["ls", "/usr"]  
+ENTRYPOINT ["/bin/sh"]  
