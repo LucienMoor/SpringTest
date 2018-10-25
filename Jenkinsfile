@@ -14,7 +14,7 @@ pipeline {
             }
         }
         stage('test'){
-            agent{
+            agent{ dockerfile true
             }
            steps {
 		   sh 'mv ./ksp/* ./'
