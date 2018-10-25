@@ -1,7 +1,7 @@
 pipeline {
     agent none
 	    environment {
-        katalon_opts = 'test="test"'
+        katalon_opts = '/katalon/katalon/source/SpringTest/SpringTest.prj'
     }
     stages {
         stage('Build') { 
