@@ -19,8 +19,7 @@ pipeline {
             }
            steps {
 		   sh 'ls'
-		   sh 'cd /katalon'
-		   sh './katalon'
+		   sh './runTest.sh'
 			cleanWs()
 				
             }
