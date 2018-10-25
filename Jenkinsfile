@@ -24,8 +24,8 @@ pipeline {
                 }
             }
            steps {
-		   sh 'printenv'
-		sh 'docker run --rm -v /var/jenkins_home/workspace/DemoPipeline/SpringTest:/katalon/katalon/source:ro -v /home/ubuntu/report:/katalon/katalon/report -e KATALON_OPTS="$katalon_opts" katalonstudio/katalon'
+		sh 'ls'
+		sh './SpringTest/run_chrome.sh'
                 cleanWs()
             }
             
