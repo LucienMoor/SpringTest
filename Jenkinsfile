@@ -1,8 +1,5 @@
 pipeline {
     agent none
-	    environment {
-        katalon_opts = '/katalon/katalon/project/SpringTest.prj'
-    }
     stages {
         stage('Build') { 
             agent {
@@ -12,7 +9,7 @@ pipeline {
             }
             steps {
                 sh 'mv ./SpringTestDemo/* ./'
-                sh 'mvn -DskipTests clean package' 
+                sh 'mvn clean package' 
                 sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &'
             }
         }
@@ -24,10 +21,10 @@ pipeline {
                 }
             }
            steps {
-		sh 'ls'
-		sh 'chmod +x ./SpringTest/run_chrome.sh'
-		sh './SpringTest/run_chrome.sh'
-                cleanWs()
+				sh 'ls'
+				sh 'chmod +x ./SpringTest/run_chrome.sh'
+				sh './SpringTest/run_chrome.sh'
+						cleanWs()
             }
             
         }
