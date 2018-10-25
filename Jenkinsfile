@@ -29,6 +29,7 @@ pipeline {
 		   		sh 'apk upgrade'
 		   		sh 'apk add bash'
 				sh 'chmod +x ./run_chrome.sh'
+		   		sh 'docker pull katalonstudio/katalon'
 				sh 'bash ./run_chrome.sh'
 						cleanWs()
             }
