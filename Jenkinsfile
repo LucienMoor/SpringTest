@@ -21,7 +21,7 @@ pipeline {
                 }
             }
            steps {
-		   sh 'mv ./SpringTest/* ./'
+		   sh 'mv ./ksp/* ./'
 		   sh 'ls /var/jenkins_home/workspace/DemoPipeline'
 		  		sh 'apk update'
 		   		sh 'apk upgrade'
