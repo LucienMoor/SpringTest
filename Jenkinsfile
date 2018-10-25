@@ -15,10 +15,7 @@ pipeline {
         }
         stage('test'){
             agent{
-                docker{
-                    image 'docker'
-                    
-                }
+				dockerfile true
             }
            steps {
 		   sh 'mv ./SpringTest/* ./'
@@ -27,7 +24,6 @@ pipeline {
 		   		sh 'apk upgrade'
 		   		sh 'apk add bash'
 				sh 'chmod +x ./run_chrome.sh'
-				sh 'bash ./run_chrome.sh'
 						cleanWs()
             }
             
