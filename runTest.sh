@@ -1,0 +1,1 @@
+/katalon/katalon -noSplash  -runMode=console -consoleLog -projectPath="/var/jenkins_home/workspace/DemoPipeline/SpringTest/SpringTest.prj" -retry=0 -testSuitePath="/var/jenkins_home/workspace/DemoPipeline/Test Suites/SpringTest" -executionProfile="default" -browserType="Chrome"

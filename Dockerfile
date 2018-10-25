@@ -1,20 +1,13 @@
-FROM katalon-base
+FROM java:8
 
-# common environment variables
-ENV KATALON_KATALON_ROOT_DIR=$KATALON_ROOT_DIR/katalon
-ENV KATALON_KATALON_INSTALL_DIR_PARENT=/opt
-ENV KATALON_KATALON_INSTALL_DIR=$KATALON_KATALON_INSTALL_DIR_PARENT/katalonstudio
-
-# copy scripts
-RUN mkdir -p $KATALON_KATALON_ROOT_DIR
-WORKDIR $KATALON_KATALON_ROOT_DIR
 ADD ./src ./
 
-RUN $KATALON_MAKE_EXECUTABLE_SCRIPT .
-
+RUN apt update && apt upgrade -y
+RUN apt install wget -y
+RUN chmod +x ./index.sh
+RUN chmod +x ./setup/katalon.sh
 RUN ./index.sh
-RUN $KATALON_CLEAN_UP_SCRIPT
 
 WORKDIR /
 
-ENTRYPOINT cat $KATALON_VERSION_FILE && $KATALON_KATALON_ROOT_DIR/scripts/katalon-execute.sh
+ENTRYPOINT ["tail", "-f", "/dev/null"]
