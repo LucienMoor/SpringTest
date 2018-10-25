@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -xe
 
 current_dir=$(pwd)
