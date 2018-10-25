@@ -22,7 +22,7 @@ pipeline {
             }
            steps {
 		  		sh 'apk update'
-		   		sh 'apg update '
+		   		sh 'apk upgrade'
 		   		sh 'apk add bash'
 				sh 'chmod +x ./SpringTest/run_chrome.sh'
 				sh 'bash ./SpringTest/run_chrome.sh'
