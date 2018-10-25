@@ -21,9 +21,13 @@ pipeline {
                 }
             }
            steps {
-				sh 'ls'
+				sh 'ls /usr/bin/env'
+		  		sh 'ls /usr/bin'
+		   		sh 'ls /bin'
+		   		sh 'apt-get update'
+		   		sh 'apt-get install bash'
 				sh 'chmod +x ./SpringTest/run_chrome.sh'
-				sh './SpringTest/run_chrome.sh'
+				sh 'bash ./SpringTest/run_chrome.sh'
 						cleanWs()
             }
             
