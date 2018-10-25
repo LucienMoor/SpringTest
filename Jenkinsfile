@@ -9,7 +9,7 @@ pipeline {
             }
             steps {
                 sh 'mv ./SpringTestDemo/* ./'
-                sh 'mvn clean package' 
+                sh 'mvn -DskipTests clean package' 
                 sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &'
             }
         }
@@ -21,9 +21,13 @@ pipeline {
                 }
             }
            steps {
-				sh 'ls'
-				sh 'chmod +x ./SpringTest/run_chrome.sh'
-				sh './SpringTest/run_chrome.sh'
+		   sh 'mv ./SpringTest/* ./'
+		   sh 'ls /var/jenkins_home/workspace/DemoPipeline'
+		  		sh 'apk update'
+		   		sh 'apk upgrade'
+		   		sh 'apk add bash'
+				sh 'chmod +x ./run_chrome.sh'
+				sh 'bash ./run_chrome.sh'
 						cleanWs()
             }
             
