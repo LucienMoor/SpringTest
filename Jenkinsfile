@@ -21,7 +21,8 @@ pipeline {
                 }
             }
            steps {
-                sh 'docker ps' 
+				sh 'ls'
+                sh 'katalon -noSplash  -runMode=console -consoleLog -projectPath=".\SpringTest\SpringTest.prj" -retry=0 -testSuitePath="Test Suites/SpringTest" -executionProfile="default" -browserType="Chrome"'
                 cleanWs()
             }
             
