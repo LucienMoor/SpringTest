@@ -17,6 +17,7 @@ pipeline {
             }
            steps {
 		   sh 'ls'
+		   sh 'chmod +x ./runTest.sh'
 		   sh './runTest.sh'
 			cleanWs()
 				
