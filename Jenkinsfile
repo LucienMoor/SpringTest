@@ -21,7 +21,7 @@ pipeline {
                 }
             }
            steps {
-		sh 'ls /SpringTest'
+		sh 'ls echo $PWD'
 		sh 'katalon_opts=\'-browserType="Chrome" -retry=0 -statusDelay=15 -projectPath="katalon/katalon/source/SpringTest/SpringTest.prj" -testSuitePath="Test Suites/SpringTest" --config -proxy.option=MANUAL_CONFIG -proxy.server.type=HTTP -proxy.server.address=192.168.1.221 -proxy.server.port=8888\''
 		sh 'docker run --rm -v /SpringTest:/katalon/katalon/source:ro -v /home/ubuntu/report:/katalon/katalon/report -e KATALON_OPTS="$katalon_opts" katalonstudio/katalon'
                 cleanWs()
