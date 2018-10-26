@@ -11,8 +11,7 @@ pipeline {
             steps {
 		
                 sh 'mv ./SpringTestDemo/* ./'
-		sh 'mvn clean package' 
-		sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar'
+		sh 'mvn package' 
 		sh 'sleep 20'
 
             }
@@ -24,7 +23,7 @@ pipeline {
 			}
             	}
            steps {
-		   
+		sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &'
 		sh 'chmod +x ./runTest.sh'
 		sh './runTest.sh'
 		cleanWs()
