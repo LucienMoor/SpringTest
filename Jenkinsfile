@@ -20,11 +20,12 @@ pipeline {
             agent{ dockerfile true
             }
            steps {
-		   sh 'chmod +x ./runTest.sh'
-		   sh 'bash Xvfb :99 &'
-		   sh 'bash setenv DISPLAY=:99'
-		   sh './runTest.sh'
-		   cleanWs()
+		sh 'chmod +x ./runTest.sh'
+		sh 'Xvfb :0 >& /dev/null &'
+		sh 'DISPLAY=:0'
+		sh 'export DISPLAY'
+		sh './runTest.sh'
+		cleanWs()
 				
             }
             
