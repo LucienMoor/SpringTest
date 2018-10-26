@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://127.0.0.1:8888')
+WebUI.navigateToUrl('http://localhost:8888')
 
 WebUI.verifyTextPresent('Get your greeting', false)
 
