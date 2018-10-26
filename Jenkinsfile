@@ -21,10 +21,9 @@ pipeline {
             }
            steps {
 		sh 'chmod +x ./runTest.sh'
-		sh 'Xvfb :0 >& /dev/null &'
-		sh 'DISPLAY=:0'
-		sh 'export DISPLAY'
-		sh './runTest.sh'
+		sh 'bash Xvfb -ac :99 -screen 0 1280x1024x16 &'
+                sh 'bash export DISPLAY=:99'
+		sh 'bash ./runTest.sh'
 		cleanWs()
 				
             }
