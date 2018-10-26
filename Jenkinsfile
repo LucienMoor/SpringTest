@@ -12,15 +12,17 @@ pipeline {
 		
                 sh 'mv ./SpringTestDemo/* ./'
 		sh 'mvn clean package' 
-                sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &'
+		sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &'
+		sh 'sleep 20'
             }
         }
         stage('test'){
             agent{ dockerfile true
             }
            steps {
-		   sh 'ping'
 		   sh 'chmod +x ./runTest.sh'
+		   sh 'Xvfb :0 >& /dev/null &'
+		   sh 'export DISPLAY=":0"'
 		   sh './runTest.sh'
 		   cleanWs()
 				
