@@ -8,18 +8,20 @@ pipeline {
               }
             }
             steps {
-
-                sh 'cd ./SpringTestDemo'
+		
+                sh 'mv ./SpringTestDemo/* ./'
+		sh 'mvn clean package' 
+                sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar'
             }
         }
         stage('test'){
             agent{ dockerfile true
             }
            steps {
-		   sh 'ls'
+		   sh 'ping'
 		   sh 'chmod +x ./runTest.sh'
 		   sh './runTest.sh'
-			cleanWs()
+		   cleanWs()
 				
             }
             
