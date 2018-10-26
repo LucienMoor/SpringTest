@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('localhost:8888')
+WebUI.navigateToUrl('google.com')
 
 WebUI.closeBrowser()
 
