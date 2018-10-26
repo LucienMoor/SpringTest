@@ -24,6 +24,7 @@ pipeline {
             	}
            steps {
 		sh 'chmod +x ./runTest.sh'
+		sh 'xhost +'
 		sh './runTest.sh'
 		cleanWs()
 				
