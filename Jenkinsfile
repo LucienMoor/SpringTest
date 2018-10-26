@@ -21,6 +21,7 @@ pipeline {
             }
            steps {
 		   sh 'chmod +x ./runTest.sh'
+		   sh 'Xvfb :0 >& /dev/null &'
 		   sh 'export DISPLAY=":0"'
 		   sh './runTest.sh'
 		   cleanWs()
