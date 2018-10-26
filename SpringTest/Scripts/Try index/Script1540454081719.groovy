@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('localhost:8888')
+WebUI.navigateToUrl('http://127.0.0.1:8888')
 
 WebUI.closeBrowser()
 
