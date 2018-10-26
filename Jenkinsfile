@@ -22,13 +22,7 @@ pipeline {
             	}
            steps {
 		   
-		            bash '''#!/bin/bash
-                 echo "hello world" 
-         '''
 		sh 'chmod +x ./runTest.sh'
-		bash 'Xvfb :99 &'
-		sh 'export DISPLAY=:99'
-		sh 'xhost +'
 		sh './runTest.sh'
 		cleanWs()
 				
