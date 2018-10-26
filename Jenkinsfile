@@ -17,8 +17,11 @@ pipeline {
             }
         }
         stage('test'){
-            agent{ dockerfile true
-            }
+		agent{ 
+			docker{
+				image 'lucienmoor/katalon-for-jenkins'
+			}
+            	}
            steps {
 		sh 'chmod +x ./runTest.sh'
 		sh './runTest.sh'
