@@ -12,7 +12,8 @@ pipeline {
 		
                 sh 'mv ./SpringTestDemo/* ./'
 		sh 'mvn clean package' 
-		sh 'mvn spring-boot:run'
+		sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &'
+		sh 'sleep 20000'
             }
         }
         stage('test'){
