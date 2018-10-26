@@ -21,6 +21,7 @@ pipeline {
             }
            steps {
 		   sh 'chmod +x ./runTest.sh'
+		   sh 'setenv DISPLAY :0.0'
 		   sh './runTest.sh'
 		   cleanWs()
 				
