@@ -19,7 +19,6 @@ pipeline {
             agent{ dockerfile true
             }
            steps {
-		   sh 'ping'
 		   sh 'chmod +x ./runTest.sh'
 		   sh './runTest.sh'
 		   cleanWs()
