@@ -17,7 +17,7 @@ pipeline {
         stage('test'){
 		agent{ 
 			docker{
-				image 'lucienmoor/katalon-for-jenkins'
+				image 'lucienmoor/katalon-for-jenkins:latest'
 			}
             	}
            steps {
