@@ -8,8 +8,8 @@ pipeline {
               }
             }
             steps {
+		sh 'mv ./SpringTestDemo/* ./'
 		sh 'mvn sonar:sonar -Dsonar.projectKey=LucienMoor_SpringTest -Dsonar.organization=lucienmoor-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e800ab354b87736aaef7152b13db882e01bd6763'
-                sh 'mv ./SpringTestDemo/* ./'
 		//sh 'mvn clean package' 
 		//stash name: "app", includes: "**"
 
