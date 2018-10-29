@@ -10,7 +10,7 @@ pipeline {
             steps {
 		
                 sh 'mv ./SpringTestDemo/* ./'
-		sh 'mvn package' 
+
 
             }
         }
@@ -22,6 +22,7 @@ pipeline {
 			}
             	}
            steps {
+		sh 'mvn package' 
 		sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar'
 		   // >/dev/null 2>&1 &
 		//sh 'sleep 30'
