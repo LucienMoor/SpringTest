@@ -13,6 +13,7 @@ pipeline {
                 sh 'mv ./SpringTestDemo/* ./'
 		sh 'mvn clean package' 
 		sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &'
+		stash name: "app", includes: "./target/*"
 		sh 'ls'
 
 
@@ -25,8 +26,9 @@ pipeline {
 			}
             	}
            steps {
-
+		unstash "app"
 		sh 'ls'
+		   sh 'java -jar ./target/SpringTestDemo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &'
 		   sleep 30000
 		//sh 'sleep 30'
 		//sh 'chmod +x ./runTest.sh'
