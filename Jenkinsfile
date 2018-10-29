@@ -5,6 +5,7 @@ pipeline {
             agent {
               docker {
                image 'maven:3-alpine'
+					args '-p 8888:8080'
               }
             }
             steps {
@@ -20,7 +21,6 @@ pipeline {
 		agent{ 
 			docker{
 				image 'lucienmoor/katalon-for-jenkins:latest'
-				args '-p 8888:8080'
 			}
             	}
            steps {
