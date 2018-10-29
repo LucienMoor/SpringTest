@@ -11,9 +11,9 @@ pipeline {
             steps {
 		
                 sh 'mv ./SpringTestDemo/* ./'
-		sh 'mvn clean package' 
+		//sh 'mvn clean package' 
 		    		sh 'ls'
-		stash name: "app", includes: "./*"
+		stash name: "app", includes: "SpringTestDemo/*"
 		    		sh 'ls'
 
 
