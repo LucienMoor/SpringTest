@@ -21,6 +21,7 @@ pipeline {
 		agent{ 
 			docker{
 				image 'lucienmoor/katalon-for-jenkins:latest'
+				args '-p 8888:8080'
 			}
 		}
 		   steps {
@@ -32,6 +33,7 @@ pipeline {
 			sh 'chmod +x ./runTest.sh'
 			//sh 'sleep 300000'
 			sh './runTest.sh'
+			   sleep 3000
 
 			cleanWs()
 
