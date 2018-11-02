@@ -1,7 +1,3 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -12,14 +8,21 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import java.net.InetAddress
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import java.net.InetAddress as InetAddress
 
 WebUI.openBrowser('')
 
-println (System.getenv( 'local_addr' ))
-WebUI.navigateToUrl('http://'+System.getenv( 'local_addr' ))
+println(System.getenv('local_addr'))
 
-WebUI.verifyTextPresent('Get your greeting', false)
+WebUI.navigateToUrl(('http://' + System.getenv('local_addr')) + '/registration')
 
 WebUI.closeBrowser()
+
+WebUI.setText(findTestObject('name'), 'test_user')
+WebUI.setText(findTestObject('email'), 'test_user@mail.com')
+WebUI.setText(findTestObject('password'), 'demo1234')
 

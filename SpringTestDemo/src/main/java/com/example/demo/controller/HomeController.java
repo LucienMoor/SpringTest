@@ -18,9 +18,14 @@ public class HomeController {
 	private UserService userService;
 	
     @GetMapping("/greeting")
-    public String home(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "greeting";
+    }
+    
+    @GetMapping("/")
+    public String home() {
+        return "index";
     }
     
     @GetMapping("/add")
