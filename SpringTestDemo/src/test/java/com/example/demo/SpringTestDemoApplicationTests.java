@@ -53,14 +53,5 @@ public class SpringTestDemoApplicationTests {
 		
 		
 	}
-	
-	@Test
-	public void addUserTest() throws Exception {
-		String name = "toto";
-		this.webClient.get().uri("/add?name="+name).exchange().expectStatus().isOk();
-		List<User> users = this.webClient.get().uri("/all").exchange().expectBodyList(User.class).returnResult().getResponseBody();
-		Assert.assertTrue(users.stream().anyMatch(elem -> elem.getName().equals(name)));
-		
-	}
 
 }
