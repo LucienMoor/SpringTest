@@ -9,21 +9,21 @@
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>c917a76c-c532-46cf-999b-af5aa3e62cc6</testSuiteGuid>
+   <testSuiteGuid>caa1dc54-9a55-4bb3-983e-371199bc4596</testSuiteGuid>
    <testCaseLink>
-      <guid>481d1240-13f5-43ac-aefe-99529e1b8ca0</guid>
+      <guid>8ee0ea2e-e267-4911-9597-f907ae8c4bb1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Try index</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>bbad68d4-0c0c-4fab-a872-ae0080e4ed69</guid>
+      <guid>4df2b4b7-d5b0-43a6-af0e-6129a9aa9fe6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/registration</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b8423a27-51af-4e61-bcd8-264be7da2125</guid>
+      <guid>4844288a-e693-490b-a141-2013208c20d3</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Login</testCaseId>

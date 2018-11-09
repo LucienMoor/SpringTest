@@ -64,15 +64,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
 			.authenticated().and().csrf().disable().formLogin()
 			.loginPage("/login").failureUrl("/login?error=true")
-			  /* .successHandler(new AuthenticationSuccessHandler() {
-
-					@Override
-					public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-							Authentication authentication) throws IOException, ServletException {
-						redirectStrategy.sendRedirect(request, response, "/admin/home");
-						
-					}
-			   })*/
 			.defaultSuccessUrl("/admin/home",true)
 			.usernameParameter("name")
 			.passwordParameter("password")
