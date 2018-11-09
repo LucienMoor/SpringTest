@@ -19,7 +19,7 @@
    <testCaseLink>
       <guid>4df2b4b7-d5b0-43a6-af0e-6129a9aa9fe6</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/registration</testCaseId>
    </testCaseLink>
    <testCaseLink>
