@@ -16,8 +16,9 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-println (System.getenv( 'local_addr' ))
-WebUI.navigateToUrl('http://'+System.getenv( 'local_addr' )+"/registration")
+println(System.getenv('local_addr'))
+
+WebUI.navigateToUrl(('http://' + System.getenv('local_addr')) + '/registration')
 
 WebUI.setText(findTestObject('Page_Registration Form/input_Registration Form_name'), 'user1')
 

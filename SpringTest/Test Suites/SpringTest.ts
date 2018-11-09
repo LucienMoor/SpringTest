@@ -17,7 +17,7 @@
       <testCaseId>Test Cases/Try index</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>124f00c5-3746-4fda-821f-435a811fe26e</guid>
+      <guid>404defdf-9401-4587-afb6-416b81d48491</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Registration</testCaseId>
@@ -27,5 +27,17 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Login</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>124f00c5-3746-4fda-821f-435a811fe26e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/RegistrationRefused</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>52dca686-a14d-44b4-aebf-9d5d80020c5f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/LoginRefused</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

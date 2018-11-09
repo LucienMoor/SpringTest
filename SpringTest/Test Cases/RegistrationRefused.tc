@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Registration</name>
+   <name>RegistrationRefused</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e5dd6c51-949f-4dee-b457-1da45a8d1cbf</testCaseGuid>
+   <testCaseGuid>e16a673b-6c03-46ce-8db9-dd186865ace9</testCaseGuid>
 </TestCaseEntity>
