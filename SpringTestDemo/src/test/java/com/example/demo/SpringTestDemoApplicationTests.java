@@ -69,9 +69,16 @@ public class SpringTestDemoApplicationTests {
     
     @Test
     public void testLoginController() {
-        LoginController homeController = new LoginController();
-        ModelAndView result = homeController.login();
+        LoginController loginController = new LoginController();
+        ModelAndView result = loginController.login();
         Assert.assertEquals(result.getViewName(),"login");
+    }
+    
+    @Test
+    public void testAdd() {
+        LoginController loginController = new LoginController();
+        int result = loginController.add(2, 2);
+        Assert.assertEquals(result,4);
     }
 
 }
