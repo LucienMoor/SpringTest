@@ -2,6 +2,8 @@ package com.example.demo;
 
 
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -10,6 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.List;
 
 import org.junit.Test;
+import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -25,7 +28,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.controller.HomeController;
+import com.example.demo.controller.LoginController;
 import com.example.demo.models.User;
 
 
@@ -53,5 +59,19 @@ public class SpringTestDemoApplicationTests {
 		
 		
 	}
+	
+    @Test
+    public void testHomeController() {
+        HomeController homeController = new HomeController();
+        String result = homeController.home();
+        Assert.assertEquals(result,"index");
+    }
+    
+    @Test
+    public void testLoginController() {
+        LoginController homeController = new LoginController();
+        ModelAndView result = homeController.login();
+        Assert.assertEquals(result.getViewName(),"login");
+    }
 
 }
