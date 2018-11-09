@@ -13,3 +13,18 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.openBrowser('')
+
+println (System.getenv( 'local_addr' ))
+WebUI.navigateToUrl('http://'+System.getenv( 'local_addr' )+"/login")
+
+WebUI.setText(findTestObject('Page_Spring Security Tutorial/input_Welcome_name'), 'user1')
+
+WebUI.setEncryptedText(findTestObject('Page_Spring Security Tutorial/input_Welcome_password'), 'qkSM9dMGTRU=')
+
+WebUI.click(findTestObject('Page_Spring Security Tutorial/button_Login'))
+
+WebUI.verifyTextPresent('Welcome user1', false)
+
+WebUI.closeBrowser()
+

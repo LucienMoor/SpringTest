@@ -16,17 +16,14 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-/*println(System.getenv('local_addr'))
-
-WebUI.navigateToUrl('http://' + System.getenv('local_addr'))*/
-
-WebUI.navigateToUrl("http://localhost:8080/registration")
+println (System.getenv( 'local_addr' ))
+WebUI.navigateToUrl('http://'+System.getenv( 'local_addr' )+"/registration")
 
 WebUI.setText(findTestObject('Page_Registration Form/input_Registration Form_name'), 'user1')
 
 WebUI.setText(findTestObject('Page_Registration Form/input_Registration Form_email'), 'user1@mail.com')
 
-WebUI.setEncryptedText(findTestObject('Page_Registration Form/input_Registration Form_passwo'), 'maison')
+WebUI.setEncryptedText(findTestObject('Page_Registration Form/input_Registration Form_passwo'), 'qkSM9dMGTRU=')
 
 WebUI.click(findTestObject('Page_Registration Form/button_Register User'))
 
