@@ -77,8 +77,7 @@ public class SpringTestDemoApplicationTests {
     @Test
     public void testAdd() {
         LoginController loginController = new LoginController();
-        int result = loginController.add(2, 2);
-        Assert.assertEquals(result,4);
+        Assert.assertEquals(4,loginController.add(2, 2));
     }
 
 }
