@@ -43,7 +43,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public Iterable<User> findAll() {
-		// TODO Auto-generated method stub
 		return userRepository.findAll();
 	}
 
