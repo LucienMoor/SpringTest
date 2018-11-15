@@ -158,7 +158,8 @@
                     <id>default-report</id>
                     <phase>prepare-package</phase>
                     <goals>
-                        <goal>report</goal>
+                         <goal>integration-test</goal>
+                         <goal>verify</goal>
                     </goals>
                 </execution>
             </executions>
