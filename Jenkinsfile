@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Build') { 
             agent {
@@ -46,6 +46,12 @@ pipeline {
 
 		    }
             
+        }
+    }
+       post {
+        always {
+            echo 'always clean up'
+            deleteDir()
         }
     }
 }
