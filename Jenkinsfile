@@ -47,11 +47,11 @@ pipeline {
 		    }
             
         }
-	post {
-        cleanup {
+    }
+       post {
+        always {
             echo 'always clean up'
             deleteDir()
         }
-    }
     }
 }
