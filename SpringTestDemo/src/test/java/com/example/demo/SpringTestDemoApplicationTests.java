@@ -49,6 +49,12 @@ public class SpringTestDemoApplicationTests {
     @Autowired
     private MockMvc mockMvc;
     
+    @Autowired
+    private HomeController homeController;
+    
+    @Autowired
+    private LoginController loginController;
+    
     @Test
     public void contextLoads() throws Exception {
     }
@@ -62,21 +68,18 @@ public class SpringTestDemoApplicationTests {
 	
     @Test
     public void testHomeController() {
-        HomeController homeController = new HomeController();
         String result = homeController.home();
         Assert.assertEquals(result,"index");
     }
     
     @Test
     public void testLoginController() {
-        LoginController loginController = new LoginController();
         ModelAndView result = loginController.login();
         Assert.assertEquals(result.getViewName(),"login");
     }
     
     @Test
     public void testAdd() {
-        LoginController loginController = new LoginController();
         Assert.assertEquals(4,loginController.add(2, 2));
     }
 

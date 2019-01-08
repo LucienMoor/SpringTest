@@ -28,8 +28,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Autowired
 	private DataSource dataSource;
@@ -48,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.usersByUsernameQuery(usersQuery)
 				.authoritiesByUsernameQuery(rolesQuery)
 				.dataSource(dataSource)
-				.passwordEncoder(bCryptPasswordEncoder);
+				.passwordEncoder(passwordEncoder());
 	}
 
 	@Override
@@ -90,6 +88,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	 
 	    return handler;
 	}
+	
+	 @Bean
+	    public BCryptPasswordEncoder passwordEncoder() {
+	        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+	        return bCryptPasswordEncoder;
+	    }
 	
 
 

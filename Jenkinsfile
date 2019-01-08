@@ -8,8 +8,7 @@ pipeline {
               }
             }
             steps {
-		sh 'cd ./SpringTestDemo'
-		sh 'mvn clean package'
+		sh 'mvn clean package -f ./SpringTestDemo'
 		stash name: "app", includes: "**"
 
 
@@ -24,8 +23,8 @@ pipeline {
             }
             steps {
 		    unstash "app"
-		    sh 'mvn clean test'
-		    sh 'mvn sonar:sonar -Dsonar.projectKey=LucienMoor_SpringTest -Dsonar.organization=lucienmoor-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e800ab354b87736aaef7152b13db882e01bd6763'
+		    sh 'mvn clean test -f ./SpringTestDemo'
+		    sh 'mvn sonar:sonar -f ./SpringTestDemo -Dsonar.projectKey=LucienMoor_SpringTest -Dsonar.organization=lucienmoor-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e800ab354b87736aaef7152b13db882e01bd6763'
 	    }
         }
         stage('IntegrationTest'){
