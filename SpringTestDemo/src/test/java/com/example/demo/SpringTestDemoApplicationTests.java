@@ -37,7 +37,6 @@ import com.example.demo.models.User;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)//use random port to test
-@EnableAutoConfiguration(exclude=HibernateJpaAutoConfiguration.class)
 @AutoConfigureMockMvc
 public class SpringTestDemoApplicationTests {
 
@@ -52,9 +51,6 @@ public class SpringTestDemoApplicationTests {
     @Autowired
     private LoginController loginController;
     
-    @Test
-    public void contextLoads() throws Exception {
-    }
 	
 	@Test
 	public void homeTest() throws Exception {
