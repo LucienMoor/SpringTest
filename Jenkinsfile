@@ -9,7 +9,7 @@ pipeline {
             }
             steps {
 			sh 'mv ./SpringTestDemo/* ./'
-		sh 'mvn clean package -f ./SpringTestDemo'
+		sh 'mvn clean package'
 		stash name: "app", includes: "**"
 
 
