@@ -24,7 +24,7 @@ pipeline {
             steps {
 		    unstash "app"
 			sh '(cd ./SpringTestDemo/; mvn clean test)'
-		    sh '(cd ./SpringTestDemo/; mvn sonar:sonar -f ./SpringTestDemo -Dsonar.projectKey=LucienMoor_SpringTest -Dsonar.organization=lucienmoor-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e800ab354b87736aaef7152b13db882e01bd6763)'
+		    sh '(cd ./SpringTestDemo/; mvn sonar:sonar -Dsonar.projectKey=LucienMoor_SpringTest -Dsonar.organization=lucienmoor-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e800ab354b87736aaef7152b13db882e01bd6763)'
 	    }
         }
         stage('IntegrationTest'){
