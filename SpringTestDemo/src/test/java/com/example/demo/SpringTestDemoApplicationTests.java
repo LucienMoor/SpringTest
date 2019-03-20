@@ -52,7 +52,6 @@ public class SpringTestDemoApplicationTests {
     @Autowired
     private LoginController loginController;
     
-	
 	@Test
 	public void homeTest() throws Exception {
 		this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Get your greeting")));
@@ -76,5 +75,4 @@ public class SpringTestDemoApplicationTests {
     public void testAdd() {
         Assert.assertEquals(4,loginController.add(2, 2));
     }
-
 }
